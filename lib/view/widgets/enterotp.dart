@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:remote_task/view/utilities/alltext.dart';
 import 'package:remote_task/view/utilities/colors.dart';
 import 'package:sizer/sizer.dart';
@@ -33,12 +34,12 @@ enterotp(BuildContext context) {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      otpfields(),
-                      otpfields(),
-                      otpfields(),
-                      otpfields(),
-                      otpfields(),
-                      otpfields(),
+                      otpfields(context),
+                      otpfields(context),
+                      otpfields(context),
+                      otpfields(context),
+                      otpfields(context),
+                      otpfields(context),
                     ],
                   ),
                 ),
@@ -65,12 +66,22 @@ enterotp(BuildContext context) {
       });
 }
 
-Widget otpfields() {
+Widget otpfields(BuildContext context) {
   return SizedBox(
     height: 5.h,
-    width: 2.w,
+    width: 3.w,
     child: TextFormField(
+      onChanged: (value) {
+        if (value.length == 1) {
+          FocusScope.of(context).nextFocus();
+        } else if (value.length == 1) {
+          FocusScope.of(context).previousFocus();
+        }
+      },
+      inputFormatters: [LengthLimitingTextInputFormatter(1)],
+      style: TextStyle(fontSize: 3.sp, fontWeight: FontWeight.bold),
       decoration: InputDecoration(
+
 //          hintStyle: TextStyle(fontSize: 2.sp, color: bl),
 
           border: OutlineInputBorder()),

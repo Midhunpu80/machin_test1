@@ -7,7 +7,7 @@ import 'package:sizer/sizer.dart';
 
 targetdetails() {
   return Container(
-    height: 160.h,
+    height: 100.h,
     width: 85.w,
     color: gy.withOpacity(0.1),
     child: SingleChildScrollView(
@@ -138,18 +138,22 @@ targetdetails() {
               ],
             ),
           ),
-          SizedBox(height: 3.h,),
+          SizedBox(
+            height: 3.h,
+          ),
           SingleChildScrollView(
             child: Row(
               children: [
-          
-          SizedBox(width: 5.h,),
-            filedetails2(count: 5),
+                SizedBox(
+                  width: 5.h,
+                ),
+                filedetails2(count: 7),
               ],
             ),
           ),
-
-          SizedBox(height: 4.h,),
+          SizedBox(
+            height: 2.h,
+          ),
         ],
       ),
     ),

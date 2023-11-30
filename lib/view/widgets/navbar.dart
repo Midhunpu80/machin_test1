@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:remote_task/view/screen/teamheadloginscreen.dart';
-import 'package:remote_task/view/screen/teamscreen.dart';
+import 'package:remote_task/view/screen/web/teamheadloginscreen.dart';
+import 'package:remote_task/view/screen/web/teamscreen.dart';
 import 'package:remote_task/view/utilities/alltext.dart';
 import 'package:remote_task/view/utilities/colors.dart';
 import 'package:sizer/sizer.dart';
@@ -16,10 +16,8 @@ Widget navbar() {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: InkWell(
-            onTap: (){
-
-              Get.to(()=>teamscreenlogin());
-
+            onTap: () {
+              Get.to(() => teamscreenlogin());
             },
             child: SizedBox(
                 child: alltext(
@@ -30,23 +28,22 @@ Widget navbar() {
                     max: 1)),
           ),
         ),
-        Spacer(),
+      const   Spacer(),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Container(
+          child:  Container(
             width: 16.w,
             height: 6.h,
-          
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 InkWell(
-                  onTap: (){
-                                  Get.to(()=>teamHeadscreenlogin());
-
+                  onTap: () {
+                    Get.to(() => teamHeadscreenlogin());
                   },
-                  child: CircleAvatar(
-                    backgroundColor: re,
+                  child: const CircleAvatar(
+                    backgroundImage: AssetImage(
+                        "images/ElonMusk_1651076367069_1651076367208.webp"),
                   ),
                 ),
                 alltext(
@@ -59,11 +56,16 @@ Widget navbar() {
                   Icons.keyboard_arrow_down,
                   color: wh,
                 ),
-                CircleAvatar(
-                  backgroundColor: wh,
-                  child: Icon(
-                    Icons.notifications_active,
-                    color: bl,
+                InkWell(
+                  onTap: () {
+                    Get.to(() => teamscreenlogin());
+                  },
+                  child: CircleAvatar(
+                    backgroundColor: wh,
+                    child: Icon(
+                      Icons.notifications_active,
+                      color: bl,
+                    ),
                   ),
                 ),
               ],

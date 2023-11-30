@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:remote_task/controller/pagecontroller.dart';
-import 'package:remote_task/view/screen/teamheadloginscreen.dart';
-import 'package:remote_task/view/screen/teamscreen.dart';
+import 'package:remote_task/view/screen/web/home.dart';
+import 'package:remote_task/view/screen/web/teamheadloginscreen.dart';
+import 'package:remote_task/view/screen/web/teamscreen.dart';
 import 'package:remote_task/view/screen/web/dashboardscreen.dart';
 import 'package:sizer/sizer.dart';
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: Scaffold(body: dashboradwebscreen()),
+        home: Scaffold(body: Homescreen()),
       );
     });
   }

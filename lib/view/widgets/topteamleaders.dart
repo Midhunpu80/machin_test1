@@ -27,7 +27,9 @@ Widget topteamleaders() {
             child: Row(
               children: [
                 teamcountscard(txt: "In Preogress", txt2: "21"),
-                SizedBox(width: 2.w,),
+                SizedBox(
+                  width: 2.w,
+                ),
                 teamcountscard(txt: "Disburesed Amount", txt2: "551"),
               ],
             ),
@@ -52,14 +54,14 @@ Widget topteamleaders() {
               child: Container(
                 height: 48.h,
                 width: 75.w,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(1.h)),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(1.h)),
                 child: ListView.separated(
                     itemBuilder: (context, index) {
                       return Container(
                         height: 7.h,
                         width: 80.w,
                         decoration: BoxDecoration(
-                          
                             border: Border.all(width: 1, color: gy),
                             borderRadius: BorderRadius.circular(1.h)),
                         child: Padding(
@@ -69,6 +71,8 @@ Widget topteamleaders() {
                             children: [
                               CircleAvatar(
                                 backgroundColor: sr,
+                                backgroundImage:const  AssetImage(
+                                    "images/ElonMusk_1651076367069_1651076367208.webp"),
                               ),
                               alltext(
                                   txt: "Priyasharama",
@@ -118,10 +122,16 @@ teamcountscard({required var txt, required var txt2}) {
   return Container(
     height: 14.h,
     width: 18.w,
-  decoration: BoxDecoration(borderRadius: BorderRadius.circular(1.h),color: wh,boxShadow: [
-    BoxShadow(offset: Offset.zero,color: gy,blurRadius: 5,)
-    
-  ]),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(1.h),
+        color: wh,
+        boxShadow: [
+          BoxShadow(
+            offset: Offset.zero,
+            color: gy,
+            blurRadius: 5,
+          )
+        ]),
     child: Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
